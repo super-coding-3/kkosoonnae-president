@@ -2,6 +2,7 @@ import React from "react";
 import { IoStorefront } from "react-icons/io5";
 import { PiPawPrintFill } from "react-icons/pi";
 import { ImProfile } from "react-icons/im";
+import { Link, useLocation } from "react-router-dom";
 
 import {
   Accordion,
@@ -9,42 +10,73 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../shard_ui/accordion";
+import { CATEGORY } from "constants/constants";
 
 const Nav: React.FC = () => {
+  const { pathname } = useLocation();
+
+  const getDefaultAccordionItem = (): string => {
+    if (pathname.includes("store")) {
+      return "store";
+    } else if (pathname.includes("customer")) {
+      return "customger";
+    } else {
+      return "mypage";
+    }
+  };
+
+  const navLink = (to: string, item: string) => {
+    const isCurrentPath = pathname === to ? true : false;
+    return (
+      <Link to={to}>
+        <AccordionContent
+          className={isCurrentPath ? "font-semibold opacity-100" : "opacity-50"}
+        >
+          {item}
+        </AccordionContent>
+      </Link>
+    );
+  };
+
   return (
     <nav className="bg-MAIN_LIGHT_COLOR w-60 h-screen flex flex-col items-center">
       <img className="w-20 my-10" src="\img\logo\logo.svg" />
-      <Accordion type="single" collapsible className=" text-white">
+      <Accordion
+        type="single"
+        collapsible
+        className="text-white"
+        defaultValue={getDefaultAccordionItem()}
+      >
         <AccordionItem value="store">
           <AccordionTrigger>
             <p className="flex items-center gap-2">
               <IoStorefront />
-              상점관리
+              {CATEGORY.STORE_MANAGEMENT.menu}
             </p>
           </AccordionTrigger>
-          <AccordionContent>내 상점정보</AccordionContent>
-          <AccordionContent>컷 스타일</AccordionContent>
+          {navLink("/", CATEGORY.STORE_MANAGEMENT.item1)}
+          {navLink("/", CATEGORY.STORE_MANAGEMENT.item2)}
         </AccordionItem>
         <AccordionItem value="customer">
           <AccordionTrigger>
             <p className="flex items-center gap-2">
               <PiPawPrintFill />
-              고객관리
+              {CATEGORY.CUSTOM_MANAGEMENT.menu}
             </p>
           </AccordionTrigger>
-          <AccordionContent>고객목록</AccordionContent>
-          <AccordionContent>예약관리</AccordionContent>
-          <AccordionContent>리뷰관리</AccordionContent>
+          {navLink("/", CATEGORY.CUSTOM_MANAGEMENT.item1)}
+          {navLink("/", CATEGORY.CUSTOM_MANAGEMENT.item2)}
+          {navLink("/", CATEGORY.CUSTOM_MANAGEMENT.item3)}
         </AccordionItem>
         <AccordionItem value="mypage">
           <AccordionTrigger>
             <p className="flex items-center gap-2">
               <ImProfile />
-              마이페이지
+              {CATEGORY.MYPAGE.menu}
             </p>
           </AccordionTrigger>
-          <AccordionContent>회원정보 수정</AccordionContent>
-          <AccordionContent>비밀번호 변경</AccordionContent>
+          {navLink("/mypage_edit_user_info", CATEGORY.MYPAGE.item1)}
+          {navLink("/", CATEGORY.MYPAGE.item2)}
         </AccordionItem>
       </Accordion>
     </nav>
