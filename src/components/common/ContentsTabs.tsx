@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import { Tabs, TabsList, TabsTrigger } from "../shard_ui/tabs";
 import {
   Breadcrumb,
@@ -8,14 +11,26 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "../shard_ui/breadcrumb";
+import { CATEGORY_INFOS } from "constants/constants";
 
 const ContentsTabs: React.FC = () => {
+  const { pathname } = useLocation();
+  const tabsInfo = CATEGORY_INFOS.find((x) => pathname.includes(x.id));
+  const menuName = tabsInfo?.menu;
+  const currentTabInfo = tabsInfo?.route.find((x) => pathname === x.path);
+  const currentTabName = currentTabInfo?.name;
+
   return (
     <div className="flex justify-between">
-      <Tabs defaultValue="account" className="w-[400px]">
+      <Tabs value={currentTabName}>
         <TabsList>
-          <TabsTrigger value="tab-1">회원목록 수정</TabsTrigger>
-          <TabsTrigger value="tab-2">비밀번호 변경</TabsTrigger>
+          {tabsInfo?.route.map((item) => (
+            <Link to={item.path} key={item.path}>
+              <TabsTrigger value={item.name} className="w-32">
+                {item.name}
+              </TabsTrigger>
+            </Link>
+          ))}
         </TabsList>
       </Tabs>
       <Breadcrumb>
@@ -25,11 +40,11 @@ const ContentsTabs: React.FC = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink>마이페이지</BreadcrumbLink>
+            <BreadcrumbLink>{menuName}</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>회원정보 수정</BreadcrumbPage>
+            <BreadcrumbPage>{currentTabName}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
