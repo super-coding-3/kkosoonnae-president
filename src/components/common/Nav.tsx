@@ -10,7 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../shard_ui/accordion";
-import { CATEGORY } from "constants/constants";
+import { CATEGORY_INFOS } from "constants/constants";
 
 const Nav: React.FC = () => {
   const { pathname } = useLocation();
@@ -19,16 +19,16 @@ const Nav: React.FC = () => {
     if (pathname.includes("store")) {
       return "store";
     } else if (pathname.includes("customer")) {
-      return "customger";
+      return "customer";
     } else {
       return "mypage";
     }
   };
 
-  const navLink = (to: string, item: string) => {
+  const renderNavLink = (to: string, item: string, key: string) => {
     const isCurrentPath = pathname === to ? true : false;
     return (
-      <Link to={to}>
+      <Link to={to} key={key}>
         <AccordionContent
           className={isCurrentPath ? "font-semibold opacity-100" : "opacity-50"}
         >
@@ -36,6 +36,16 @@ const Nav: React.FC = () => {
         </AccordionContent>
       </Link>
     );
+  };
+
+  const renderMenuIcon = (value: string) => {
+    if (value === "store") {
+      return <IoStorefront />;
+    } else if (value === "customer") {
+      return <PiPawPrintFill />;
+    } else {
+      return <ImProfile />;
+    }
   };
 
   return (
@@ -47,37 +57,19 @@ const Nav: React.FC = () => {
         className="text-white"
         defaultValue={getDefaultAccordionItem()}
       >
-        <AccordionItem value="store">
-          <AccordionTrigger>
-            <p className="flex items-center gap-2">
-              <IoStorefront />
-              {CATEGORY.STORE_MANAGEMENT.menu}
-            </p>
-          </AccordionTrigger>
-          {navLink("/", CATEGORY.STORE_MANAGEMENT.item1)}
-          {navLink("/", CATEGORY.STORE_MANAGEMENT.item2)}
-        </AccordionItem>
-        <AccordionItem value="customer">
-          <AccordionTrigger>
-            <p className="flex items-center gap-2">
-              <PiPawPrintFill />
-              {CATEGORY.CUSTOM_MANAGEMENT.menu}
-            </p>
-          </AccordionTrigger>
-          {navLink("/", CATEGORY.CUSTOM_MANAGEMENT.item1)}
-          {navLink("/", CATEGORY.CUSTOM_MANAGEMENT.item2)}
-          {navLink("/", CATEGORY.CUSTOM_MANAGEMENT.item3)}
-        </AccordionItem>
-        <AccordionItem value="mypage">
-          <AccordionTrigger>
-            <p className="flex items-center gap-2">
-              <ImProfile />
-              {CATEGORY.MYPAGE.menu}
-            </p>
-          </AccordionTrigger>
-          {navLink("/mypage_edit_user_info", CATEGORY.MYPAGE.item1)}
-          {navLink("/", CATEGORY.MYPAGE.item2)}
-        </AccordionItem>
+        {CATEGORY_INFOS.map((item) => (
+          <AccordionItem value={item.id} key={item.id}>
+            <AccordionTrigger>
+              <p className="flex items-center gap-2">
+                {renderMenuIcon(item.id)}
+                {item.menu}
+              </p>
+            </AccordionTrigger>
+            {item.route.map((item) =>
+              renderNavLink(item.path, item.name, item.path)
+            )}
+          </AccordionItem>
+        ))}
       </Accordion>
     </nav>
   );
