@@ -1,7 +1,10 @@
+import Login from "../page/Login";
 import EditUserInfo from "../page/EditUserInfo";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
+  // 로그인
+  { path: "/login", element: <Login /> },
   // 내 상점정보
   { path: "/store_info", element: <EditUserInfo /> },
   // 컷 스타일
