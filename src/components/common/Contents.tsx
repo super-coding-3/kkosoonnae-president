@@ -5,7 +5,7 @@ interface ContentsProps {
 }
 
 const Contents: React.FC<ContentsProps> = ({ children }) => {
-  return <main className="bg-white rounded-md h-full">{children}</main>;
+  return <main className="bg-white rounded-md h-full p-7">{children}</main>;
 };
 
 export default Contents;
