@@ -27,6 +27,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    fontFamily: {
+      sans: ["Noto Sans KR", "Helvetica", "ui-sans-serif", "system-ui"],
+    },
   },
   plugins: [],
 };
