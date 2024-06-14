@@ -1,4 +1,5 @@
 import EditUserInfo from "../page/EditUserInfo";
+import ChangePassword from "page/ChangePassword";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
@@ -15,7 +16,7 @@ export const ROUTER_INFOS = [
   // 회원정보 수정
   { path: "/mypage_edit_user_info", element: <EditUserInfo /> },
   // 비밀번호 변경
-  { path: "/mypage_change_password", element: <EditUserInfo /> },
+  { path: "/mypage_change_password", element: <ChangePassword /> },
 ];
 
 export const CATEGORY_INFOS = [
