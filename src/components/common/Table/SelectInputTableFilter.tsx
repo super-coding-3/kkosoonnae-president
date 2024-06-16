@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../shard_ui/select";
+} from "../../shard_ui/select";
 import LabelTableFilter from "./LabelTableFilter";
 
 interface SelectInputTableFilterProps {

@@ -1,17 +1,18 @@
 import React from "react";
-import { Input } from "../shard_ui/input";
+import { Input } from "../../shard_ui/input";
+import Label from "./Label";
 
-interface InputLabelProps {
+interface InputTextProps {
   label: string;
   type: string;
   placeholder: string;
   disable: boolean;
 }
 
-const InputLabel: React.FC<InputLabelProps> = (props) => {
+const InputText: React.FC<InputTextProps> = (props) => {
   return (
     <div className="flex items-start">
-      <label className="font-medium w-40">{props.label}</label>
+      <Label label={props.label} />
       <Input
         type={props.type}
         placeholder={props.placeholder}
@@ -22,4 +23,4 @@ const InputLabel: React.FC<InputLabelProps> = (props) => {
   );
 };
 
-export default InputLabel;
+export default InputText;

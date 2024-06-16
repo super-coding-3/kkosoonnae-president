@@ -1,7 +1,9 @@
 import Login from "../page/Login";
+import ReservationList from "page/ReservationList";
 import ReviewManagement from "page/ReviewManagement";
 import EditUserInfo from "../page/EditUserInfo";
 import ChangePassword from "page/ChangePassword";
+import ReservationDetail from "page/ReservationDetail";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
@@ -15,14 +17,16 @@ export const ROUTER_INFOS = [
   { path: "/store-cut-style", element: <EditUserInfo /> },
   // 고객목록
   { path: "/customer-list", element: <EditUserInfo /> },
-  // 예약관리
-  { path: "/customer-reservation", element: <EditUserInfo /> },
+  // 예약목록
+  { path: "/customer-reservation", element: <ReservationList /> },
   // 리뷰관리
   { path: "/customer-review", element: <ReviewManagement /> },
   // 회원정보 수정
   { path: "/mypage-edit-user-info", element: <EditUserInfo /> },
   // 비밀번호 변경
   { path: "/mypage-change-password", element: <ChangePassword /> },
+  // 예약 상세
+  { path: "/customer-reservation-detail", element: <ReservationDetail /> },
 ];
 
 export const CATEGORY_INFOS = [

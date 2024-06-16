@@ -1,10 +1,10 @@
 import React from "react";
 
-import Layout from "components/common/Layout";
-import DateInputTableFilter from "components/common/DateInputTabeFilter";
-import SelectInputTableFilter from "components/common/SelectInputTableFilter";
-import TextInputTableFilter from "components/common/TextInputTableFilter";
-import BtnTableFilter from "components/common/BtnTableFilter";
+import Layout from "components/common/Layout/Layout";
+import DateInputTableFilter from "components/common/Table/DateInputTabeFilter";
+import SelectInputTableFilter from "components/common/Table/SelectInputTableFilter";
+import TextInputTableFilter from "components/common/Table/TextInputTableFilter";
+import BtnTableFilter from "components/common/FormGroup/BtnTableFilter";
 import CardReview from "components/review_management/CardReview";
 
 const ReviewManagement: React.FC = () => {
