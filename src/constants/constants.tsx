@@ -1,25 +1,28 @@
 import Login from "../page/Login";
+import ReviewManagement from "page/ReviewManagement";
 import EditUserInfo from "../page/EditUserInfo";
 import ChangePassword from "page/ChangePassword";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
   // 로그인
-  { path: "/login", element: <Login /> },
+  { path: "/", element: <Login /> },
+  // 회원가입
+  { path: "/signup", element: <Login /> },
   // 내 상점정보
-  { path: "/store_info", element: <EditUserInfo /> },
+  { path: "/store-info", element: <EditUserInfo /> },
   // 컷 스타일
-  { path: "/store_cut_style", element: <EditUserInfo /> },
+  { path: "/store-cut-style", element: <EditUserInfo /> },
   // 고객목록
-  { path: "/customer_list", element: <EditUserInfo /> },
+  { path: "/customer-list", element: <EditUserInfo /> },
   // 예약관리
-  { path: "/customer_reservation", element: <EditUserInfo /> },
+  { path: "/customer-reservation", element: <EditUserInfo /> },
   // 리뷰관리
-  { path: "/customer_review", element: <EditUserInfo /> },
+  { path: "/customer-review", element: <ReviewManagement /> },
   // 회원정보 수정
-  { path: "/mypage_edit_user_info", element: <EditUserInfo /> },
+  { path: "/mypage-edit-user-info", element: <EditUserInfo /> },
   // 비밀번호 변경
-  { path: "/mypage_change_password", element: <ChangePassword /> },
+  { path: "/mypage-change-password", element: <ChangePassword /> },
 ];
 
 export const CATEGORY_INFOS = [
@@ -27,25 +30,25 @@ export const CATEGORY_INFOS = [
     id: "store",
     menu: "상점관리",
     route: [
-      { name: "내 상점정보", ...ROUTER_INFOS[0] },
-      { name: "컷 스타일", ...ROUTER_INFOS[1] },
+      { name: "내 상점정보", ...ROUTER_INFOS[2] },
+      { name: "컷 스타일", ...ROUTER_INFOS[3] },
     ],
   },
   {
     id: "customer",
     menu: "고객관리",
     route: [
-      { name: "고객목록", ...ROUTER_INFOS[2] },
-      { name: "예약관리", ...ROUTER_INFOS[3] },
-      { name: "리뷰관리", ...ROUTER_INFOS[4] },
+      { name: "고객목록", ...ROUTER_INFOS[4] },
+      { name: "예약관리", ...ROUTER_INFOS[5] },
+      { name: "리뷰관리", ...ROUTER_INFOS[6] },
     ],
   },
   {
     id: "mypage",
     menu: "마이페이지",
     route: [
-      { name: "회원정보 수정", ...ROUTER_INFOS[5] },
-      { name: "비밀번호 변경", ...ROUTER_INFOS[6] },
+      { name: "회원정보 수정", ...ROUTER_INFOS[7] },
+      { name: "비밀번호 변경", ...ROUTER_INFOS[8] },
     ],
   },
 ];
