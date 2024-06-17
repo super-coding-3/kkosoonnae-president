@@ -1,5 +1,5 @@
 import React from "react";
-import { DatePickerWithRange } from "./DatePickerWithRange";
+import { DatePickerWithRange } from "../DatePickerWithRange";
 import LabelTableFilter from "./LabelTableFilter";
 
 interface DateInputTableFilterProps {

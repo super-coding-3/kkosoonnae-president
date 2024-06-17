@@ -1,33 +1,35 @@
-import BtnSubmit from "components/common/BtnSubmit";
-import InputLabel from "components/common/InputLabel";
-import Layout from "components/common/Layout";
+import BtnSubmit from "components/common/FormGroup/BtnSubmit";
+import InputText from "components/common/FormGroup/InputText";
+import Layout from "components/common/Layout/Layout";
 import React from "react";
 
 const ChangePassword: React.FC = () => {
   return (
     <Layout>
-      <form className="flex justify-between">
+      <form className="h-full flex justify-between">
         <div className="flex flex-col gap-5">
-          <InputLabel
+          <InputText
             label="현재 비밀번호"
             type="password"
             placeholder="현재 비밀번호를 입력해주세요"
             disable={false}
           />
-          <InputLabel
+          <InputText
             label="변경 비밀번호"
             type="password"
             placeholder="변경할 비밀번호를 입력해주세요"
             disable={false}
           />
-          <InputLabel
+          <InputText
             label="비밀번호 확인"
             type="password"
             placeholder="변경할 비밀번호를 재입력해주세요"
             disable={false}
           />
         </div>
-        <BtnSubmit type="submit" value="변경" />
+        <div className="flex items-end">
+          <BtnSubmit type="submit" value="변경" />
+        </div>
       </form>
     </Layout>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { Tabs, TabsList, TabsTrigger } from "../shard_ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "components/shard_ui/tabs";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,7 +10,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "../shard_ui/breadcrumb";
+} from "components/shard_ui/breadcrumb";
 import { CATEGORY_INFOS } from "constants/constants";
 
 const ContentsTabs: React.FC = () => {

@@ -1,4 +1,4 @@
-import BtnTwoWay from "components/common/BtnTwoWay";
+import BtnTwoWay from "components/common/FormGroup/BtnTwoWay";
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { IoTriangleSharp } from "react-icons/io5";

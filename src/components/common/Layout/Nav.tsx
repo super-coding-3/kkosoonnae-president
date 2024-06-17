@@ -9,7 +9,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../shard_ui/accordion";
+} from "components/shard_ui/accordion";
 import { CATEGORY_INFOS } from "constants/constants";
 
 const Nav: React.FC = () => {
