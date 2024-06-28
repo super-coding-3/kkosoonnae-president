@@ -1,9 +1,9 @@
 import Login from "../page/Login";
-import ReservationList from "page/ReservationList";
-import ReviewManagement from "page/ReviewManagement";
-import EditUserInfo from "../page/EditUserInfo";
-import ChangePassword from "page/ChangePassword";
-import ReservationDetail from "page/ReservationDetail";
+import ReservationList from "page/reservation_management/ReservationList";
+import ReviewManagement from "page/review_management/ReviewManagement";
+import EditUserInfo from "page/mypage/EditUserInfo";
+import ChangePassword from "page/mypage/ChangePassword";
+import ReservationDetail from "page/reservation_management/ReservationDetail";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
@@ -27,6 +27,8 @@ export const ROUTER_INFOS = [
   { path: "/mypage-change-password", element: <ChangePassword /> },
   // 예약 상세
   { path: "/customer-reservation-detail", element: <ReservationDetail /> },
+  // 예약 통계
+  { path: "/customer-reservation-statistics", element: <ReservationDetail /> },
 ];
 
 export const CATEGORY_INFOS = [
