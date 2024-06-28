@@ -4,6 +4,7 @@ import ReviewManagement from "page/review_management/ReviewManagement";
 import EditUserInfo from "page/mypage/EditUserInfo";
 import ChangePassword from "page/mypage/ChangePassword";
 import ReservationDetail from "page/reservation_management/ReservationDetail";
+import ReservationDashboard from "page/reservation_management/ReservationDashboard";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
@@ -28,7 +29,10 @@ export const ROUTER_INFOS = [
   // 예약 상세
   { path: "/customer-reservation-detail", element: <ReservationDetail /> },
   // 예약 통계
-  { path: "/customer-reservation-statistics", element: <ReservationDetail /> },
+  {
+    path: "/customer-reservation-statistics",
+    element: <ReservationDashboard />,
+  },
 ];
 
 export const CATEGORY_INFOS = [
@@ -58,3 +62,5 @@ export const CATEGORY_INFOS = [
     ],
   },
 ];
+
+export const NUMBER_COMMA = /\B(?=(\d{3})+(?!\d))/g;
