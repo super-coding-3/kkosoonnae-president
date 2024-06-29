@@ -11,9 +11,9 @@ interface ReservationCountProps {
 
 const ReservationCount: React.FC<ReservationCountProps> = (props) => {
   return (
-    <article className="flex flex-col justify-center gap-3 border border-COMMONN_BORDER_GRAY rounded-md w-96 h-full p-5">
+    <article className="flex flex-col justify-center gap-3 border border-COMMONN_BORDER_GRAY rounded-md w-1/3 h-full p-5">
       <header className="text-MAIN_LIGHT_COLOR text-xl">{props.title}</header>
-      <main className="w-full text-right text-7xl">
+      <main className="w-full text-right text-6xl">
         {props.count.toString().replace(NUMBER_COMMA, ",")}
       </main>
       <footer

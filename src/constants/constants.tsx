@@ -30,7 +30,7 @@ export const ROUTER_INFOS = [
   { path: "/customer-reservation-detail", element: <ReservationDetail /> },
   // 예약 통계
   {
-    path: "/customer-reservation-statistics",
+    path: "/customer-reservation-dashboard",
     element: <ReservationDashboard />,
   },
 ];
