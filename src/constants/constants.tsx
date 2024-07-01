@@ -5,6 +5,7 @@ import EditUserInfo from "page/mypage/EditUserInfo";
 import ChangePassword from "page/mypage/ChangePassword";
 import ReservationDetail from "page/reservation_management/ReservationDetail";
 import ReservationDashboard from "page/reservation_management/ReservationDashboard";
+import ReservationSchedule from "page/reservation_management/ReservationSchedule";
 
 // Router_infos에 object 순서 변경하면 안됨
 export const ROUTER_INFOS = [
@@ -32,6 +33,11 @@ export const ROUTER_INFOS = [
   {
     path: "/customer-reservation-dashboard",
     element: <ReservationDashboard />,
+  },
+  // 예약 스케줄
+  {
+    path: "/customer-reservation-schedule",
+    element: <ReservationSchedule />,
   },
 ];
 
