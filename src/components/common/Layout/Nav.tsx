@@ -1,7 +1,8 @@
 import React from "react";
-import { IoStorefront } from "react-icons/io5";
-import { PiPawPrintFill } from "react-icons/pi";
-import { ImProfile } from "react-icons/im";
+import { Store } from "lucide-react";
+import { PawPrint } from "lucide-react";
+import { UserRoundCog } from "lucide-react";
+import { CalendarCheck } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 import {
@@ -20,6 +21,8 @@ const Nav: React.FC = () => {
       return "store";
     } else if (pathname.includes("customer")) {
       return "customer";
+    } else if (pathname.includes("reservation")) {
+      return "reservation";
     } else {
       return "mypage";
     }
@@ -40,11 +43,13 @@ const Nav: React.FC = () => {
 
   const renderMenuIcon = (value: string) => {
     if (value === "store") {
-      return <IoStorefront />;
+      return <Store size="17px" />;
     } else if (value === "customer") {
-      return <PiPawPrintFill />;
+      return <PawPrint size="17px" />;
+    } else if (value === "reservation") {
+      return <CalendarCheck size="17px" />;
     } else {
-      return <ImProfile />;
+      return <UserRoundCog size="17px" />;
     }
   };
 
