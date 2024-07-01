@@ -1,0 +1,17 @@
+.rbc-toolbar-label {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rbc-today {
+  background-color: #f2f3f6;
+}
+
+.rbc-event {
+  background-color: #492d28;
+}
+
+.rbc-day-slot .rbc-event {
+  background-color: #492d28;
+  border: 1px solid #492d28;
+}
