@@ -9,9 +9,28 @@
 
 .rbc-event {
   background-color: #492d28;
+  font-size: 12px;
 }
 
 .rbc-day-slot .rbc-event {
   background-color: #492d28;
   border: 1px solid #492d28;
+}
+
+.rbc-current-time-indicator {
+  background-color: #492d28;
+}
+
+.rbc-button-link {
+  color: #492d28;
+  font-size: 12px;
+}
+
+.rbc-button-link:hover {
+  color: #492d28;
+  font-weight: 900;
+}
+
+.rbc-agenda-view table.rbc-agenda-table tbody > tr > td {
+  border-left: 1px solid #ddd;
 }

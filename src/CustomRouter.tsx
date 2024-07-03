@@ -46,9 +46,6 @@ const CustomRouter: React.FC = () => {
         path={ROUTER_PATH.reservationSchedule}
         element={<ReservationSchedule />}
       />
-      {/* {ROUTER_INFOS.map((info, index) => (
-        <Route key={index} path={info.path} element={info.element} />
-      ))} */}
     </Routes>
   );
 };
