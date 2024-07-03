@@ -10,6 +10,7 @@ import moment from "moment";
 import "moment/locale/ko";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "../../styles/customReservationSchedule.css";
+import { ROUTER_PATH } from "constants/constants";
 
 const ReservationSchedule: React.FC = () => {
   const reservationData = [
@@ -29,13 +30,27 @@ const ReservationSchedule: React.FC = () => {
     },
     {
       id: 3,
+      title: "홍길동 집사님의 띵동이",
+      start: new Date(2024, 5, 21, 18, 0),
+      end: new Date(2024, 5, 21, 19, 0),
+      desc: "예약 확정",
+    },
+    {
+      id: 4,
       title: "김길동 집사님의 띵동이",
       start: new Date(2024, 5, 21, 13, 0),
       end: new Date(2024, 5, 21, 14, 0),
       desc: "예약 확정",
     },
     {
-      id: 4,
+      id: 5,
+      title: "김길동 집사님의 띵동이",
+      start: new Date(2024, 5, 21, 11, 0),
+      end: new Date(2024, 5, 21, 12, 0),
+      desc: "예약 확정",
+    },
+    {
+      id: 6,
       title: "최길동 집사님의 띵동이",
       start: new Date(2024, 5, 22, 15, 0),
       end: new Date(2024, 5, 22, 16, 0),
@@ -77,9 +92,10 @@ const ReservationSchedule: React.FC = () => {
     day: "일간",
     agenda: "일정표",
     today: "오늘",
-    previous: "이전 달",
-    next: "다음 달",
+    previous: "이전",
+    next: "다음",
     noEventsInRange: "해당 기간에 예약이 없습니다.",
+    showMore: (total: number) => `+ ${total}개의 예약 더 보기`,
   };
 
   return (
@@ -94,7 +110,7 @@ const ReservationSchedule: React.FC = () => {
           formats={formats}
           messages={messages}
           onSelectEvent={(event) =>
-            (window.location.href = "/customer-reservation-detail")
+            (window.location.href = ROUTER_PATH.reservationDetail)
           }
         />
       </div>
