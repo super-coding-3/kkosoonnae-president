@@ -9,7 +9,7 @@ const AuthPageTitle: React.FC<AuthPageTitleProps> = ({ subtitle, title }) => {
   return (
     <div className="text-center">
       <img
-        src="img/logo/logo.svg"
+        src="img/common/logo.svg"
         alt="로고"
         className="block w-24 mx-auto -mt-40 mb-12"
       />

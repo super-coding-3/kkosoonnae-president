@@ -67,7 +67,9 @@ const SignupForm: React.FC = () => {
 
         <TermsText />
 
-        <BtnSubmit type="submit" value="회원가입" />
+        <div className="flex justify-center">
+          <BtnSubmit type="submit" value="회원가입" />
+        </div>
       </div>
     </form>
   );
