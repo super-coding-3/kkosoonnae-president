@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "page/auth/Login";
+import Signup from "page/auth/Signup";
 import ReservationList from "page/reservation_management/ReservationList";
 import ReviewManagement from "page/review_management/ReviewManagement";
 import EditUserInfo from "page/mypage/EditUserInfo";
@@ -16,7 +17,7 @@ const CustomRouter: React.FC = () => {
       {/* 로그인 */}
       <Route path={ROUTER_PATH.login} element={<Login />} />
       {/* 회원가입 */}
-      <Route path={ROUTER_PATH.signup} element={<Login />} />
+      <Route path={ROUTER_PATH.signup} element={<Signup />} />
       {/* 내 상점정보 */}
       <Route path={ROUTER_PATH.storeInfo} element={<EditUserInfo />} />
       {/* 컷 스타일 */}

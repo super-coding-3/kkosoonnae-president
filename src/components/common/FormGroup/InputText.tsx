@@ -11,7 +11,7 @@ interface InputTextProps {
 
 const InputText: React.FC<InputTextProps> = (props) => {
   return (
-    <div className="flex items-start">
+    <div className="flex items-start  gap-2">
       <Label label={props.label} />
       <Input
         type={props.type}
