@@ -6,14 +6,14 @@ const LoginForm: React.FC = () => {
       <div className="mb-4">
         <input
           type="text"
-          className="w-full h-11 border border-COMMONN_BORDER_GRAY rounded-lg pl-2"
+          className="w-full h-11 border border-COMMON_BORDER_GRAY rounded-lg pl-2"
           placeholder="아이디를 입력해주세요."
         />
       </div>
       <div className="mb-4">
         <input
           type="password"
-          className="w-full h-11 border border-COMMONN_BORDER_GRAY rounded-lg pl-2"
+          className="w-full h-11 border border-COMMON_BORDER_GRAY rounded-lg pl-2"
           placeholder="비밀번호를 입력해주세요."
         />
       </div>

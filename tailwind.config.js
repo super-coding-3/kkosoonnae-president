@@ -10,7 +10,7 @@ module.exports = {
         MAIN_LIGHT_COLOR: "#816F6B",
         MAIN_GRAY: "#F2F3F6",
         MAIN_IVORY: "#F4F6F1",
-        COMMONN_BORDER_GRAY: "#DDDDDD",
+        COMMON_BORDER_GRAY: "#DDDDDD",
       },
       keyframes: {
         "accordion-down": {
