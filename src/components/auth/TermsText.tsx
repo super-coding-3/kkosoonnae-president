@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Checkbox } from "components/shard_ui/checkbox";
+import Checkbox from "components/common/FormGroup/Checkbox";
 
 const dummyText = [
   {

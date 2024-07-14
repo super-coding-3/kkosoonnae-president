@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import InputTextWithButton from "components/common/FormGroup/InputTextWithButton";
 import InputText from "components/common/FormGroup/InputText";
-import Checkbox from "components/common/FormGroup/Checkbox";
+
 import BtnSubmit from "components/common/FormGroup/BtnSubmit";
 import TermsText from "./TermsText";
 
