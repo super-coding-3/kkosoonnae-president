@@ -12,7 +12,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
     <div className="flex flex-col gap-3">
       <Label label={props.label} />
       <textarea
-        className="w-[544px] h-24 border border-COMMONN_BORDER_GRAY rounded-md"
+        className="px-2 py-2 w-[544px] h-24 border border-COMMONN_BORDER_GRAY rounded-md text-sm"
         value={props.value}
         placeholder={props.placeholder}
       />

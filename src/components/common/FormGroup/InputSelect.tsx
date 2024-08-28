@@ -3,7 +3,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "../../shard_ui/select";
 import React from "react";
 import Label from "./Label";
@@ -16,7 +16,7 @@ interface InputSelectProps {
 
 const InputSelect: React.FC<InputSelectProps> = (props) => {
   return (
-    <div className="flex items-start">
+    <div className="flex items-start gap-2">
       <Label label={props.label} />
       <Select>
         <SelectTrigger className="h-10 w-96 rounded-md py-5 border border-COMMONN_BORDER_GRAY ">

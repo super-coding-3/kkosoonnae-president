@@ -9,6 +9,9 @@ import ChangePassword from "page/mypage/ChangePassword";
 import ReservationDetail from "page/reservation_management/ReservationDetail";
 import ReservationDashboard from "page/reservation_management/ReservationDashboard";
 import ReservationSchedule from "page/reservation_management/ReservationSchedule";
+
+import StoreInfo from "page/store/StoreInfo";
+
 import { ROUTER_PATH } from "constants/constants";
 
 const CustomRouter: React.FC = () => {
@@ -19,7 +22,7 @@ const CustomRouter: React.FC = () => {
       {/* 회원가입 */}
       <Route path={ROUTER_PATH.signup} element={<Signup />} />
       {/* 내 상점정보 */}
-      <Route path={ROUTER_PATH.storeInfo} element={<EditUserInfo />} />
+      <Route path={ROUTER_PATH.storeInfo} element={<StoreInfo />} />
       {/* 컷 스타일 */}
       <Route path={ROUTER_PATH.cutStyle} element={<EditUserInfo />} />
       {/* 고객목록 */}
